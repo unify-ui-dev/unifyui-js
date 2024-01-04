@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="mx-auto space-y-16 max-w2xl py20">
+    <div class="space-y-6">
+      <h1 class="text-xl font-semibold text-gray9 dark-text-white">
+        Default Modal
+      </h1>
+      <div class="p10 rd-lg bg-gradient-to-bl from-blue6 via-indigo4 to-sky6 h96">
+        <div>
+          <button data-modal-trigger data-modal-target="modal-default"
+            class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">
+            DefaultModal
+          </button>
+          <div data-modal-test-1 aria-hidden="true" data-modal-id="modal-default"
+            data-modal-overlay="bg-gray8/70 backdrop-filter backdrop-blur-3xl" data-state="close"
+            class="hidden justify-center items-start p4 fixed wscreen hscreen top-0 left-0">
+            <dialog data-modal-content class="bg-white rd-lg overflow-hidden wfull 
+                  max-w2xl flex flex-col ease-linear transition-all duration-300 absolute top-4"
+              >
+              <div class="border-b border-b-gray-100 dark:border-b-gray-900 p-4 flex justify-between items-center">
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+                  Modal Default
+                </h2>
+                <button aria-label="close modal" data-close-modal
+                  class="text-gray-700 dark:text-gray-300 rounded-full p-2 border border-gray-200 dark:border-gray-800 duration-200 hover:bg-gray-100 dark:hover:bg-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                    <path
+                      d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                  </svg>
+                </button>
+              </div>
+              <div class="px-4 py-6">
+
+              </div>
+              <div class="border-t border-t-gray-100 dark:border-t-gray-900 p-4 flex items-center gap-x-3">
+                <button
+                  class="rounded px-4 h-8 flex items-center bg-blue-600 text-white duration-300 hover:bg-opacity-80">
+                  Save
+                </button>
+                <button data-close-modal
+                  class="rounded px-4 h-8 flex items-center border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 duration-300 hover:bg-gray-100 dark:hover:bg-gray-900">
+                  Cancel
+                </button>
+              </div>
+            </dialog>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hscreen flex"></div>
+  </section>
+  <script type="module" src="./main.ts"></script>
+</body>
+
+</html>
