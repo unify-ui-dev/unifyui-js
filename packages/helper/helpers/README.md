@@ -1,3 +1,3 @@
 # @unifyui/helpers
 
-All helper functions for unifyui-js
+A minimal Library containing unifyui-js Helpers functions

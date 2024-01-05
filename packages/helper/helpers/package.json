@@ -1,20 +1,28 @@
 {
   "name": "@unifyui-js/helpers",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
   "description": "A simple Helper packages, containing all usefull function for all @unifyui-js packages",
   "publishConfig": {
     "access": "public"
   },
+  "main": "./dist/helpers.umd.cjs",
+  "module": "./dist/helpers.js",
+  "types": "./dist/index.d.ts",
+  "exports":{
+    ".":{
+      "import":"./dist/helpers.js",
+      "require":"./dist/helpers.umd.cjs"
+    }
+  },
   "files": [
     "dist",
     "README.md",
-    "!examples/",
     "!uno.config.ts",
     "!tsconfig.json",
     "!vite.config.json",
-    "!package.json"
+    "package.json"
   ],
   "scripts": {
     "dev": "vite",
@@ -34,6 +42,14 @@
     "helpers",
     "component"
   ],
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unify-ui-dev/unifyui-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unify-ui-dev/unifyui-js/issues"
+  },
   "license": "MIT",
   "author": "johnkat-mj"
 }
