@@ -52,6 +52,7 @@ const elementHasTransition = (element: HTMLElement): boolean => {
     return transitionProperty !== 'none';
 }
 
+export { windowEventListener } from "./window"
 export {
     areValidHTMLElements,
     find,
