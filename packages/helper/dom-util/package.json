@@ -1,0 +1,54 @@
+{
+  "name": "@unifyui-js/dom-util",
+  "private": false,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A simple Helper packages, containing all usefull function for all @unifyui-js packages",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/dom-util.umd.cjs",
+  "module": "./dist/dom-util.js",
+  "types": "./dist/index.d.ts",
+  "exports":{
+    ".":{
+      "import":"./dist/dom-util.js",
+      "require":"./dist/dom-util.umd.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "tsconfig.json",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "publish": "npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@types/node": "^20.10.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "keywords": [
+    "unifyui-js",
+    "dom-util",
+    "component"
+  ],
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unify-ui-dev/unifyui-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unify-ui-dev/unifyui-js/issues"
+  },
+  "license": "MIT",
+  "author": "johnkat-mj"
+}
