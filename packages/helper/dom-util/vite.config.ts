@@ -8,8 +8,8 @@ export default defineConfig({
     outDir: 'dist',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: '@unify-ui/dom-util',
-      fileName: 'dom-util',
+      name: '@unifyui-js/dom_util',
+      fileName: 'dom_util',
     },
     rollupOptions: {
       external: [],
