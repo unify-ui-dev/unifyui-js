@@ -1,4 +1,4 @@
-import { find, findAll } from "@unifyui-js/helpers";
+import { find, findAll } from "@unifyui-js/dom_util";
 import { AccordionItemMetadata } from "./types";
 
 /**
@@ -9,13 +9,14 @@ import { AccordionItemMetadata } from "./types";
 function getAccordionItemMetadata(item: HTMLElement): AccordionItemMetadata {
     const trigger = find({ selector: "[data-accordion-trigger]", parentElement: item })
     const content = find({ selector: "[data-accordion-content]", parentElement: item })
-    const value = item.getAttribute("data-accordion-value") ?? "";
-    const isOpened = item.getAttribute("aria-expanded") === "true"
+    const isAlwaysOpen = item.hasAttribute("data-always-open") && item.dataset.alwaysOpen !== "false"
 
     if (!(trigger instanceof HTMLButtonElement)) throw new Error("The element does't have a Valid Trigger")
     if (!(content instanceof HTMLDivElement)) throw new Error("No Valid Content Element")
 
-    return { accordionTriggerElement: trigger, accordionContentElement: content, accordionItemValue: value, isItemExpanded: isOpened };
+    const value = item.getAttribute("data-accordion-value") ?? "";
+    const isItemExpanded = trigger.getAttribute("aria-expanded") === "true"
+    return { accordionTriggerElement: trigger, accordionContentElement: content, accordionItemValue: value, isItemExpanded, isAlwaysOpen };
 }
 
 const getElementExceptActivedAndAlwaysOpen = (accordion: HTMLElement, activeValue: string) =>

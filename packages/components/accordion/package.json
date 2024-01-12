@@ -1,7 +1,7 @@
 {
   "name": "@unifyui-js/accordion",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.3",
   "type": "module",
   "description": "Accordion component Library",
   "publishConfig": {
@@ -12,24 +12,29 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/accordion.js",
-      "require": "./dist/accordion.umd.cjs"
+      "import": {
+        "types":"./dist/index.d.ts",
+        "default":"./dist/accordion.js"
+      },
+      "require": {
+        "types":"./dist/index.d.ts",
+        "default":"./dist/accordion.umd.cjs"
+      }
     }
   },
   "files": [
     "dist",
     "README.md",
-    "tsconfig.json",
-    "package.json"
+    "!tsconfig.json",
+    "package.json",
+    "!vite.config.ts",
+    "!biome.json"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "publish-package": "npm run build && npm publish --access public"
-  },
-  "dependencies": {
-    "@unifyui-js/helpers": "^0.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
@@ -57,5 +62,8 @@
     "url": "https://github.com/unify-ui-dev/unifyui-js/issues"
   },
   "license": "MIT",
-  "author": "johnkat-mj"
+  "author": "johnkat-mj",
+  "dependencies": {
+    "@unifyui-js/dom_util": "^0.0.6"
+  }
 }
