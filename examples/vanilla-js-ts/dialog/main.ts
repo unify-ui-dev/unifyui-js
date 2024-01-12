@@ -1,11 +1,11 @@
-import { createModal } from "@unifyui-js/dialog_test"
+import { Modal } from "./../../../packages/components/dialog/src"
 import '@unocss/reset/tailwind.css'
 import 'virtual:uno.css'
 
 
 const modalEl = document.querySelector("[data-modal-test-1]")
 if (modalEl instanceof HTMLElement) {
-    createModal({
+    new Modal({
         modalElement: modalEl,
         options: {
 
@@ -14,7 +14,7 @@ if (modalEl instanceof HTMLElement) {
 }
 const modalEl1 = document.querySelector("[data-modal-test-1b]")
 if (modalEl1 instanceof HTMLElement) {
-    createModal({
+    new Modal({
         modalElement: modalEl1,
         options: {
 
@@ -23,7 +23,7 @@ if (modalEl1 instanceof HTMLElement) {
 }
 const modalEl3 = document.querySelector("[data-modal-test-3]")
 if (modalEl3 instanceof HTMLElement) {
-    createModal({
+    new Modal({
         modalElement: modalEl3,
         options: {
             animateContent: {
@@ -42,7 +42,7 @@ if (modalEl3 instanceof HTMLElement) {
 
 const modalEl2 = document.querySelector("[data-modal-test-2]")
 if (modalEl2 instanceof HTMLElement) {
-    createModal({
+    new Modal({
         modalElement: modalEl2,
         options: {
             onHide() {
@@ -59,7 +59,7 @@ if (modalEl2 instanceof HTMLElement) {
 const modalEl4 = document.querySelector("[data-modal-prevent]")
 const closeModal = document.querySelector("[data-custom-trigger]") as HTMLElement
 if (modalEl4 instanceof HTMLElement) {
-    const b = createModal({
+    const { isHidden, showModal, hideModal } = new Modal({
         modalElement: modalEl4,
         triggerElement:closeModal,
         options: {
@@ -80,7 +80,7 @@ if (modalEl4 instanceof HTMLElement) {
 const modalWithStacked = document.querySelector("[data-modal-with-stacked]")
 const openWithStacked = document.querySelector("[data-trigger-with-stacked]") as HTMLElement
 if (modalWithStacked instanceof HTMLElement) {
-    const b = createModal({
+    const b = new Modal({
         modalElement: modalWithStacked,
         triggerElement:openWithStacked,
         options: {
@@ -99,7 +99,7 @@ if (modalWithStacked instanceof HTMLElement) {
 const modalEl5 = document.querySelector("[data-modal-prevent-stack]")
 const closeModal1 = document.querySelector("[data-custom-trigger-stack]") as HTMLElement
 if (modalEl5 instanceof HTMLElement) {
-    const b = createModal({
+    const b = new Modal({
         modalElement: modalEl5,
         triggerElement:closeModal1,
         options: {
@@ -120,7 +120,7 @@ if (modalEl5 instanceof HTMLElement) {
 const modalEl6 = document.querySelector("[data-modal-third]")
 const closeModal2 = document.querySelector("[data-trigger-third]") as HTMLElement
 if (modalEl6 instanceof HTMLElement) {
-    const b = createModal({
+    const b = new Modal({
         modalElement: modalEl6,
         triggerElement:closeModal2,
         options: {
