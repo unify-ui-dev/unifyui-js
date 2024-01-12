@@ -1,0 +1,69 @@
+{
+  "name": "@unifyui-js/tabs",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Dialog component Library",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/tabs.umd.cjs",
+  "module": "./dist/tabs.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/tabs.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/tabs.umd.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "!tsconfig.json",
+    "package.json",
+    "!vite.config.ts",
+    "!biome.json"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "publish-package": "npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@types/node": "^20.10.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0"
+  },
+  "keywords": [
+    "dialog",
+    "alert-dialog",
+    "dialog component",
+    "unifyui",
+    "JS Component",
+    "HTML",
+    "interactive component",
+    "Javascript"
+  ],
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unify-ui-dev/unifyui-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unify-ui-dev/unifyui-js/issues"
+  },
+  "license": "MIT",
+  "author": "johnkat-mj",
+  "dependencies": {
+    "@unifyui-js/dom_util": "^0.0.4"
+  }
+}
