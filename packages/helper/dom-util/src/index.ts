@@ -4,5 +4,8 @@ export {
     findAll,
     elementHasDisplayNone,
     appendBefore,
-    elementHasTransition
-} from "./dom-util"
+    elementHasTransition,
+    getComputedStyle,
+    injectStyle,
+    setAttributes
+} from "./dom_util"

@@ -20,8 +20,10 @@ const findAll = ({ selector, parentElement }: { selector: string, parentElement:
     Array.from((parentElement).querySelectorAll(selector));
 
 
-const getComputedStyle = (element: HTMLElement) => {
-    if (!(element instanceof HTMLElement)) throw new Error("Element provided is not a valid element")
+
+const getComputedStyle = (element: HTMLElement | HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement) => {
+    if (!(element instanceof HTMLTextAreaElement))
+        throw new Error("Element provided is not a valid element")
     return window.getComputedStyle(element);
 }
 
@@ -52,11 +54,35 @@ const elementHasTransition = (element: HTMLElement): boolean => {
     return transitionProperty !== 'none';
 }
 
+const injectStyle = ({ newStyles, identifier }: { newStyles: string, identifier: string }) => {
+    const existingStyleTag = document.head.querySelector("[data-fx-style]")
+    if (existingStyleTag) {
+        const currentStyle = existingStyleTag.textContent || ""
+        if (!currentStyle.includes(identifier)) {
+            existingStyleTag.textContent += newStyles
+        }
+        return
+    }
+    const styleElement = document.createElement("style")
+    styleElement.textContent = newStyles
+    styleElement.setAttribute("data-fx-style", "")
+    document.head.appendChild(styleElement)
+}
+
+const setAttributes = (element:HTMLElement, attributes:Record<string, string>) => {
+    for(const [key, value] of Object.entries(attributes)){
+        element.setAttribute(key, value)
+    }
+}
+
 export {
     areValidHTMLElements,
     find,
     findAll,
     elementHasDisplayNone,
     appendBefore,
-    elementHasTransition
+    elementHasTransition,
+    getComputedStyle,
+    injectStyle,
+    setAttributes
 }

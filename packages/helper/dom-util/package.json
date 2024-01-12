@@ -1,7 +1,7 @@
 {
   "name": "@unifyui-js/dom_util",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.6",
   "type": "module",
   "description": "unify-js util package, containing all usefull functions for all @unifyui-js packages",
   "publishConfig": {
@@ -12,8 +12,14 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/dom_util.js",
-      "require": "./dist/dom_util.umd.cjs"
+      "import": {
+        "types":"./dist/dom_util.d.ts",
+        "default":"./dist/dom_util.js"
+      },
+      "require": {
+        "types":"./dist/dom_util.d.ts",
+        "default":"./dist/dom_util.umd.cjs"
+      }
     }
   },
   "files": [
